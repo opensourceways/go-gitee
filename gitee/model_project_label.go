@@ -11,7 +11,7 @@ package gitee
 
 // 创建仓库标签
 type ProjectLabel struct {
-	Id int32 `json:"id,omitempty"`
-	Name string `json:"name,omitempty"`
+	Id    int32  `json:"id,omitempty"`
+	Name  string `json:"name,omitempty"`
 	Ident string `json:"ident,omitempty"`
 }
