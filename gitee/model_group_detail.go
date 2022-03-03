@@ -32,3 +32,13 @@ type GroupDetail struct {
 	PrivateRepos string `json:"private_repos,omitempty"`
 	Owner        string `json:"owner,omitempty"`
 }
+
+type Owner struct {
+	ID        int    `json:"id,omitempty"`
+	Login     string `json:"login,omitempty"`
+	Name      string `json:"name,omitempty"`
+	AvatarURL string `json:"avatar_url,omitempty"`
+	URL       string `json:"url,omitempty"`
+	HTMLURL   string `json:"html_url,omitempty"`
+	Remark    string `json:"remark,omitempty"`
+}

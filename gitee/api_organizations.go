@@ -202,13 +202,13 @@ type GetV5OrgsOrgOpts struct {
 	AccessToken optional.String
 }
 
-func (a *OrganizationsApiService) GetV5OrgsOrg(ctx context.Context, org string, localVarOptionals *GetV5OrgsOrgOpts) (Group, *http.Response, error) {
+func (a *OrganizationsApiService) GetV5OrgsOrg(ctx context.Context, org string, localVarOptionals *GetV5OrgsOrgOpts) (GroupDetail, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue Group
+		localVarReturnValue GroupDetail
 	)
 
 	// create path and map variables
