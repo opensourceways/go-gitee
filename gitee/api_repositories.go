@@ -3628,13 +3628,13 @@ type GetV5UserReposOpts struct {
 	PerPage     optional.Int32
 }
 
-func (a *RepositoriesApiService) GetV5UserRepos(ctx context.Context, localVarOptionals *GetV5UserReposOpts) (Project, *http.Response, error) {
+func (a *RepositoriesApiService) GetV5UserRepos(ctx context.Context, localVarOptionals *GetV5UserReposOpts) ([]Project, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue Project
+		localVarReturnValue []Project
 	)
 
 	// create path and map variables
@@ -3859,10 +3859,10 @@ func (a *RepositoriesApiService) GetV5UsersUsernameRepos(ctx context.Context, us
 /*
 RepositoriesApiService 更新仓库设置
 更新仓库设置
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param owner 仓库所属空间地址(企业、组织或个人的地址path)
- * @param repo 仓库路径(path)
- * @param body repo patch param
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param owner 仓库所属空间地址(企业、组织或个人的地址path)
+  - @param repo 仓库路径(path)
+  - @param body repo patch param
 
 @return Project
 */
@@ -4333,9 +4333,9 @@ func (a *RepositoriesApiService) PostV5EnterprisesEnterpriseRepos(ctx context.Co
 /*
 RepositoriesApiService 创建组织仓库
 创建组织仓库
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param org 组织的路径(path/login)
- * @param body Repositorie 内容
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param org 组织的路径(path/login)
+  - @param body Repositorie 内容
 
 @return Project
 */
@@ -4425,10 +4425,10 @@ func (a *RepositoriesApiService) PostV5OrgsOrgRepos(ctx context.Context, org str
 /*
 RepositoriesApiService 创建分支
 创建分支
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param owner 仓库所属空间地址(企业、组织或个人的地址path)
- * @param repo 仓库路径(path)
- * @param body 新建分支内容
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param owner 仓库所属空间地址(企业、组织或个人的地址path)
+  - @param repo 仓库路径(path)
+  - @param body 新建分支内容
 
 @return CompleteBranch
 */
@@ -4634,11 +4634,11 @@ func (a *RepositoriesApiService) PostV5ReposOwnerRepoCommitsShaComments(ctx cont
 /*
 RepositoriesApiService 新建文件
 新建文件
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param owner 仓库所属空间地址(企业、组织或个人的地址path)
- * @param repo 仓库路径(path)
- * @param path 文件的路径
- * @param body 描述文件信息
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param owner 仓库所属空间地址(企业、组织或个人的地址path)
+  - @param repo 仓库路径(path)
+  - @param path 文件的路径
+  - @param body 描述文件信息
 
 @return CommitContent
 */
@@ -5280,11 +5280,11 @@ func (a *RepositoriesApiService) PostV5UserRepos(ctx context.Context, name strin
 /*
 RepositoriesApiService 设置分支保护
 设置分支保护
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param owner 仓库所属空间地址(企业、组织或个人的地址path)
- * @param repo 仓库路径(path)
- * @param branch 分支名称
- * @param body 设置分支保护参数
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param owner 仓库所属空间地址(企业、组织或个人的地址path)
+  - @param repo 仓库路径(path)
+  - @param branch 分支名称
+  - @param body 设置分支保护参数
 
 @return CompleteBranch
 */
@@ -5457,11 +5457,11 @@ func (a *RepositoriesApiService) PutV5ReposOwnerRepoClear(ctx context.Context, o
 /*
 RepositoriesApiService 添加仓库成员
 添加仓库成员
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param owner 仓库所属空间地址(企业、组织或个人的地址path)
- * @param repo 仓库路径(path)
- * @param username 用户名(username/login)
- * @param body 仓库成员内容
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param owner 仓库所属空间地址(企业、组织或个人的地址path)
+  - @param repo 仓库路径(path)
+  - @param username 用户名(username/login)
+  - @param body 仓库成员内容
 
 @return ProjectMember
 */
@@ -5553,11 +5553,11 @@ func (a *RepositoriesApiService) PutV5ReposOwnerRepoCollaboratorsUsername(ctx co
 /*
 RepositoriesApiService 更新文件
 更新文件
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param owner 仓库所属空间地址(企业、组织或个人的地址path)
- * @param repo 仓库路径(path)
- * @param path 文件的路径
- * @param body 更新文件信息
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param owner 仓库所属空间地址(企业、组织或个人的地址path)
+  - @param repo 仓库路径(path)
+  - @param path 文件的路径
+  - @param body 更新文件信息
 
 @return CommitContent
 */
@@ -5732,12 +5732,10 @@ func (a *RepositoriesApiService) PutV5ReposOwnerRepoKeysEnableId(ctx context.Con
 /*
 RepositoriesApiService 修改代码审查设置
 修改代码审查设置
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param owner 仓库所属空间地址(企业、组织或个人的地址path)
- * @param repo 仓库路径(path)
- * @param body 修改代码审查的信息
-
-
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param owner 仓库所属空间地址(企业、组织或个人的地址path)
+  - @param repo 仓库路径(path)
+  - @param body 修改代码审查的信息
 */
 func (a *RepositoriesApiService) PutV5ReposOwnerRepoReviewer(ctx context.Context, owner string, repo string, body SetRepoReviewer) (*http.Response, error) {
 	var (
